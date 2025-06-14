@@ -204,7 +204,7 @@ function generateResume() {
         document.head.appendChild(script2);
     }
 
-    // Wait for libraries to load, then generate PDF
+    //  resume PDF
     setTimeout(function() {
         if (typeof window.jspdf !== 'undefined' && typeof window.html2canvas !== 'undefined') {
             var resumeDiv = document.getElementById('resumeContentToPrint');
