@@ -4,7 +4,7 @@ function addnewexperienceField() {
     newNode.setAttribute('rows', '3');
     newNode.setAttribute('name', 'experience[]');
     newNode.setAttribute('placeholder', 'Describe your work experience');
-    // Append after the main experience field
+    //new experience section
     let container = document.getElementById('experienceField').parentNode;
     container.appendChild(newNode);
 }
@@ -21,7 +21,7 @@ function addneweducationField() {
 }
 
 function generateResume() {
-    // Get basic information
+    // basic information collection 
     var name = document.getElementById('nameField')?.value || '';
     var email = document.getElementById('emailField')?.value || '';
     var phone = document.getElementById('phoneField')?.value || '';
@@ -37,16 +37,16 @@ function generateResume() {
     var website = document.getElementById('websiteField')?.value || '';
     var achievements = document.getElementById('achievementsField')?.value || '';
     var personalStatement = document.getElementById('personalStatementField')?.value || '';
-    // Get main experience and education
+    // experience and educational information collection 
     var mainExperience = document.getElementById('experienceField')?.value || '';
     var mainEducation = document.getElementById('educationField')?.value || '';
     var mainProjects = document.getElementById('projectsField')?.value || '';
-    // Get additional dynamic fields
+    // additional info
     var additionalExperience = document.querySelectorAll('textarea[name="experience[]"]');
     var additionalEducation = document.querySelectorAll('textarea[name="education[]"]');
     var additionalProjects = document.querySelectorAll('textarea[name="projects[]"]');
     
-    // Start building resume content
+    //  resume content
     var resumeContent = `
         <div id="resumeContentToPrint" style="max-width: 900px; margin: 0 auto; padding: 40px 52px 36px 52px; font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif; background: #f7fafc; color: #23272f; border-radius: 20px; box-shadow: 0 8px 32px rgba(44,62,80,0.13);">
             <div style="text-align: center; border-bottom: 3px solid #667eea; padding-bottom: 28px; margin-bottom: 36px;">
@@ -67,7 +67,7 @@ function generateResume() {
                 </div>
             </div>`;
     
-    // Personal Statement
+    
     if (personalStatement) {
         resumeContent += `
             <div style="margin-bottom: 26px;">
